@@ -1,0 +1,7 @@
+package com.facebook.controller;
+
+import com.facebook.service.FacebookServiceInterface;
+
+public class FacebookService implements FacebookServiceInterface {
+
+}

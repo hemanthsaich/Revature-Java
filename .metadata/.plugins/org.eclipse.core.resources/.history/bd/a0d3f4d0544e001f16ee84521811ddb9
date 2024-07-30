@@ -1,0 +1,80 @@
+package com.twitter.controller;
+
+import java.util.Scanner;
+
+import com.twitter.entity.TwitterUser;
+import com.twitter.service.TwitterSericeInterface;
+
+public class TwitterController implements TwitterControllerInteraface {
+
+	@Override
+	public void createProfileController() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter name: ");
+		String name = sc.next(); 
+		
+		System.out.println("Enter name: ");
+		String password = sc.next(); 
+
+		System.out.println("Enter name: ");
+		String email = sc.next(); 
+
+		System.out.println("Enter name: ");
+		String address = sc.next(); 
+		
+		TwitterUser tu = new TwitterUser();
+		tu.setName(name);
+		tu.setPassword(password);
+		tu.setEmail(email);
+		tu.setAddress(address);
+		
+		TwitterSericeInterface ts = new TwitterService();
+		int i = ts.createProfileService(tu);
+		if(i> 0) {
+			System.out.println("Profile Created");
+		}else {
+			System.out.println("Profile Rejected");
+		}
+		
+
+	}
+
+	@Override
+	public void viewProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void editProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void searchProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void viewAllProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void loginProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

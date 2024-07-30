@@ -1,0 +1,13 @@
+package com.twitter.service;
+
+import com.twitter.entity.TwitterUser;
+
+public class TwitterService implements TwitterSericeInterface {
+
+	@Override
+	public int createProfileService(TwitterUser tu) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

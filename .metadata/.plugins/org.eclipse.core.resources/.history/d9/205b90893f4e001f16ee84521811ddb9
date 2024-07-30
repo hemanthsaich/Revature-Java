@@ -1,0 +1,5 @@
+package com.facebook.service;
+
+public interface FacebookServiceInterface {
+
+}

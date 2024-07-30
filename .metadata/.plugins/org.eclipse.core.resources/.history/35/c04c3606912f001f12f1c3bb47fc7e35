@@ -1,0 +1,30 @@
+package Inheritence;
+
+class X{
+	void m1() {
+		System.out.println("Inside X method");
+	}
+}
+
+class Y extends X{
+	void m2() {
+		System.out.println("Inside Y method");
+	}
+}
+
+class Z extends Y{
+	void m3() {
+		System.out.println("Inside Z Method");
+	}
+}
+public class MultiLevelInheritence {
+
+	public static void main(String[] args) {
+		Z obj = new Z();
+		obj.m1();
+		obj.m2();
+		obj.m3();	
+
+	}
+
+}

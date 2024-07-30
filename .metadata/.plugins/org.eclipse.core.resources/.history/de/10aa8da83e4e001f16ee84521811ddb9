@@ -1,0 +1,63 @@
+package com.facebook.controller;
+
+import java.util.Scanner;
+
+public class FacebookController implements FaceBookControllerInterface {
+
+	@Override
+	public void createProfileController() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter  name: ");
+		String name = sc.next();
+		
+		System.out.println("Enter password: ");
+		String password = sc.next();
+		
+		System.out.println("Enter email: ");
+		String email = sc.next();
+		
+		System.out.println("Enter address: ");
+		String address = sc.next();
+		
+
+	}
+
+	@Override
+	public void viewProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void editProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void searchProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void viewAllProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void LoginProfileController() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}

@@ -1,0 +1,22 @@
+package Inheritence;
+
+class A{
+	void m1() {
+		System.out.println("Inside Base Class");
+	}
+}
+
+class B{
+	void m2() {
+		System.out.println("Inside Child class");
+	}
+}
+
+public class SingleInheritence {
+	public static void main(String[] args) {
+		B obj = new B();
+		obj.m1();
+		obj.m2();
+	}
+
+}

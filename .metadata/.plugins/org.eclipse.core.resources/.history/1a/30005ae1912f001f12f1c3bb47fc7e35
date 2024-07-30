@@ -1,0 +1,34 @@
+package Inheritence;
+
+class P{
+	void m1() {
+		System.out.println("Inside P class");
+	}
+}
+
+class Q extends P{
+	void m2() {
+		System.out.println("Inside Q class");
+	}
+}
+
+class R extends P{
+	void m3() {
+		System.out.println("Inside R class");
+	}
+}
+
+class S extends P{
+	void m4() {
+		System.out.println("Inside S class");
+	}
+}
+
+public class HierarchicalInheritence {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
