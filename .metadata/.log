@@ -6160,3 +6160,28 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.security 1 0 2024-07-31 09:50:42.646
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.egit.core 4 0 2024-07-31 09:54:01.297
+!MESSAGE An exception occurred during push on URI https://github.com/hemanthsaich/Revature-Java/tree/Day2: https://github.com/hemanthsaich/Revature-Java/tree/Day2: https://github.com/hemanthsaich/Revature-Java/tree/Day2/info/refs?service=git-receive-pack not found: Not Found
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/hemanthsaich/Revature-Java/tree/Day2: https://github.com/hemanthsaich/Revature-Java/tree/Day2/info/refs?service=git-receive-pack not found: Not Found
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:168)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:315)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.NoRemoteRepositoryException: https://github.com/hemanthsaich/Revature-Java/tree/Day2: https://github.com/hemanthsaich/Revature-Java/tree/Day2/info/refs?service=git-receive-pack not found: Not Found
+	at org.eclipse.jgit.transport.TransportHttp.createNotFoundException(TransportHttp.java:610)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:678)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:637)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:140)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1557)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:158)
+	... 4 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-07-31 09:54:01.306
+!MESSAGE Can't connect to any repository: https://github.com/hemanthsaich/Revature-Java/tree/Day2 (https://github.com/hemanthsaich/Revature-Java/tree/Day2: https://github.com/hemanthsaich/Revature-Java/tree/Day2/info/refs?service=git-receive-pack not found: Not Found)
