@@ -1,6 +1,5 @@
-package com.twitter.service;
+package com.twitter.dao;
 
-import com.twitter.dao.TwitterDAOInterface;
 import com.twitter.entity.TwitterUser;
 
 public class TwitterDAO implements TwitterDAOInterface {
