@@ -1,5 +1,6 @@
 package com.facebook.controller;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.facebook.entity.FacebookUser;
@@ -43,7 +44,28 @@ public class FacebookController implements FaceBookControllerInterface {
 
 	@Override
 	public void viewProfileController() {
-		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Enter email to view profile: ");
+		String email = sc.next();
+		
+		FacebookUser fu = new FacebookUser();
+		fu.setEmail(email);
+		
+		FacebookServiceInterface  fs = new FacebookService();
+		FacebookUser fl = fs.viewProfileService(fu);
+		
+		if(fl != null) {
+			System.out.println("Your profile is: ");
+			System.out.println("Name is --> "+fl.getName());
+			System.out.println("Password is --> "+fl.getPassword());
+			System.out.println("Email is --> "+fl.getEmail());
+			System.out.println("Address is --> "+fl.getAddress());
+			
+			
+		}else {
+			System.out.println("Profile not existed for given mail id "+email);
+		}
 
 	}
 
@@ -67,7 +89,17 @@ public class FacebookController implements FaceBookControllerInterface {
 
 	@Override
 	public void viewAllProfileController() {
-		// TODO Auto-generated method stub
+		FacebookServiceInterface fs = new FacebookService();
+		List<FacebookUser> fl1 =  fs.viewAllProfileService();
+		
+		for(FacebookUser vv:fl1) {
+			System.out.println("**************");
+			System.out.println("profile: ");
+			System.out.println("Name --> "+vv.getName());
+			System.out.println("Password --> "+vv.getPassword());
+			System.out.println("Email  --> "+vv.getEmail());
+			System.out.println("Address --> "+vv.getAddress());
+		}
 
 	}
 
