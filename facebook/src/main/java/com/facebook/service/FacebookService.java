@@ -28,6 +28,18 @@ public class FacebookService implements FacebookServiceInterface {
 		return fd.viewAllProfileDAO();
 	}
 
+	@Override
+	public FacebookUser loginProfileService(FacebookUser fu) {
+		FacebookDaoInterface fd = new FacebookDao();
+		return fd.loginProfileDAO(fu);
+	}
+
+	@Override
+	public int editProfileService(FacebookUser fu) {
+		FacebookDaoInterface fd = new FacebookDao();
+		return fd.editProfileDAO(fu);
+	}
+
 	
 
 }

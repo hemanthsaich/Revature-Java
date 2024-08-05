@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,6 +122,49 @@ public class FacebookDao implements FacebookDaoInterface {
 			e.getStackTrace();
 		}
 		return fl;
+	}
+
+	@Override
+	public FacebookUser loginProfileDAO(FacebookUser fu) {
+		FacebookUser f2=null;
+	
+			//Step 1: Load Driver
+			try {
+				Class.forName("com.jdbc.cj.mysql.Driver");
+				//Step 2: Create Database Connection
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/revaturejava","root","123456");
+				
+				//Step 3: Create Query
+				PreparedStatement ps = con.prepareStatement("select *from facebookuser where email=? and password=?");
+				ps.setString(1, fu.getEmail());
+				ps.setString(2, fu.getPassword());
+				
+				//Step 4: Execute query
+				ResultSet res = ps.executeQuery();
+				if(res.next()) {
+					String n = res.getString(1);
+					String p = res.getString(2);
+					String e = res.getString(3);
+				    String a = res.getString(4);
+				    
+				    
+				    f2 = new FacebookUser();
+				    f2.setName(n);
+				    f2.setPassword(p);
+				    f2.setEmail(e);
+				    f2.setAddress(a);
+				}
+			} catch (ClassNotFoundException | SQLException e) {
+				e.getStackTrace();
+			}
+			
+		return f2;
+	}
+
+	@Override
+	public int editProfileDAO(FacebookUser fu) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

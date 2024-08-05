@@ -15,4 +15,7 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.facebook.entity.FacebookUser"/>
+    <fullyQualifiedTypeName name="java.lang.LinkageError"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
 </qualifiedTypeNameHistroy>

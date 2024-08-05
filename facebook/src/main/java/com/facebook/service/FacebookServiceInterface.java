@@ -12,6 +12,12 @@ public interface FacebookServiceInterface {
 	FacebookUser viewProfileService(FacebookUser fu);
 
 	List<FacebookUser> viewAllProfileService();
+
+
+
+	FacebookUser loginProfileService(FacebookUser fu);
+
+	int editProfileService(FacebookUser fu);
 	
 	
 
