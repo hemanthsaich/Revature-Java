@@ -130,12 +130,12 @@ public class FacebookDao implements FacebookDaoInterface {
 	
 			//Step 1: Load Driver
 			try {
-				Class.forName("com.jdbc.cj.mysql.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				//Step 2: Create Database Connection
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/revaturejava","root","123456");
 				
 				//Step 3: Create Query
-				PreparedStatement ps = con.prepareStatement("select *from facebookuser where email=? and password=?");
+				PreparedStatement ps = con.prepareStatement("select * from facebookuser where email=? and password=?");
 				ps.setString(1, fu.getEmail());
 				ps.setString(2, fu.getPassword());
 				
@@ -155,7 +155,7 @@ public class FacebookDao implements FacebookDaoInterface {
 				    f2.setAddress(a);
 				}
 			} catch (ClassNotFoundException | SQLException e) {
-				e.getStackTrace();
+				e.printStackTrace();
 			}
 			
 		return f2;

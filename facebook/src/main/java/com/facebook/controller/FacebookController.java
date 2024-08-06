@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Scanner;
 
 import com.facebook.entity.FacebookUser;
+import com.facebook.exception.UserNotFoundException;
 import com.facebook.service.FacebookService;
 import com.facebook.service.FacebookServiceInterface;
 
@@ -55,6 +56,8 @@ public class FacebookController implements FaceBookControllerInterface {
 		FacebookServiceInterface  fs = new FacebookService();
 		FacebookUser fl = fs.viewProfileService(fu);
 		
+		try {
+		
 		if(fl != null) {
 			System.out.println("Your profile is: ");
 			System.out.println("Name is --> "+fl.getName());
@@ -64,7 +67,11 @@ public class FacebookController implements FaceBookControllerInterface {
 			
 			
 		}else {
-			System.out.println("Profile not existed for given mail id "+email);
+			throw new UserNotFoundException("Profile not existed for given mail id "+email);
+			
+		}
+		}catch(Exception e) {
+			System.out.println(e);
 		}
 
 	}
@@ -73,7 +80,7 @@ public class FacebookController implements FaceBookControllerInterface {
 	public void deleteProfileController() {
 		Scanner sc= new Scanner(System.in);
 		
-		System.out.println("Enter email to delete  profile: ");
+		System.out.println("Enter email to d profile: ");
 		String email = sc.next();
 		
 		FacebookUser fu = new FacebookUser();
@@ -189,9 +196,8 @@ public class FacebookController implements FaceBookControllerInterface {
 		fu.setEmail(email);
 		fu.setPassword(password);
 		
-		
-		FacebookServiceInterface lf = new FacebookService();
-		FacebookUser f1 = lf.loginProfileService(fu);
+		FacebookServiceInterface fs = new FacebookService();
+		FacebookUser f1 = fs.loginProfileService(fu);
 		
 		if( f1 != null) {
 			System.out.println("Your profile is: ");
